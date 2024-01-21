@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        .box {
+            margin-top: 50px;
+            height: 300px;
+            width: 300px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        
+        #box_e {
+            display: grid;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        
+        #box_e button {
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .inter_face {
+            margin-top: 100px;
+            border: 1px solid rgb(9, 9, 9);
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        
+        .buto {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .display {
+            margin: auto;
+            border: 1px dotted black;
+            height: 50px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+    <div class="inter_face">
+         <div class="box">  
+            <h3>Number of people come:-</h3>
+            <div class="display">0</div>
+            <div id="box_e" >
+                <button class="buto" onclick="increment()">INCREMENT</button>
+                <button class="buto" onclick="decrement()">DECREMENT</button>
+                <button class="buto" onclick="saveValue()">SAVE</button>
+            </div>
+        </div>
+    </div> 
+<script>
+    let count = 0; // Initial count
+
+    function increment() {
+        count++;
+        updateDisplay();
+    }
+
+    function decrement() {
+        count--;
+        updateDisplay();
+    }
+
+    function saveValue() {
+        const displayValue = document.querySelector('.display').innerText;
+        // Assuming you want to store the value in another tag, let's say in a paragraph with id 'savedValue'
+        alert(displayValue);
+    }
+
+    function updateDisplay() {
+        document.querySelector('.display').innerText = count;
+    }
+</script>
+
+</body>
+</html>
